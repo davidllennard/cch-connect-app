@@ -1,0 +1,22 @@
+.sos-button {
+  background-color: var(--danger-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sos-button:hover {
+  background-color: #d03126;
+  transform: scale(1.05);
+}
+
+.sos-button svg {
+  width: 16px;
+  height: 16px;
+}
