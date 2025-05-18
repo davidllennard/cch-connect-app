@@ -445,6 +445,20 @@ label {
 }
 
 /* Home Page Styles */
+.home-container {
+  min-height: calc(100vh - var(--header-height) - var(--footer-height) - 40px);
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height) - var(--footer-height));
+  justify-content: space-between;
+}
+
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 15px;
+}
+
 .portal-header {
   text-align: center;
   margin-bottom: 30px;
@@ -524,6 +538,10 @@ label {
   color: white;
 }
 
+.language-selector-container {
+  margin-top: 20px;
+}
+
 /* Page Template Styles */
 .page-container {
   padding-top: 20px;
@@ -592,6 +610,28 @@ label {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
+  .home-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  .portal-card {
+    padding: 12px;
+  }
+
+  .portal-card-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .portal-card-title {
+    font-size: 1rem;
+  }
+
+  .portal-card-description {
+    font-size: 0.8rem;
+  }
+
   .header {
     padding: 0 15px;
   }
@@ -609,8 +649,9 @@ label {
   }
 
   .portal-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
   }
 
   .portal-card {
@@ -629,6 +670,20 @@ label {
 }
 
 @media (max-width: 480px) {
+  .home-grid {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 8px;
+  }
+
+  .portal-card {
+    padding: 10px;
+  }
+
+  .portal-card-icon {
+    width: 35px;
+    height: 35px;
+  }
+
   .header {
     padding: 0 10px;
   }
@@ -650,7 +705,8 @@ label {
   }
 
   .portal-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     gap: 10px;
   }
 
@@ -660,5 +716,49 @@ label {
 
   .card-title {
     font-size: 1.2rem;
+  }
+}
+
+/* Center the SOS button */
+.footer-nav {
+  justify-content: space-around;
+}
+
+.nav-item.sos-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+/* Research Portal button padding */
+.badge {
+  padding: 0.35rem 0.6rem;
+  margin: 0 0.2rem;
+}
+
+/* Mental Health Page Styles */
+.mental-health-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .mental-health-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .mental-health-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}
+
+@media (max-width: 1200px) {
+  .portal-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
   }
 }

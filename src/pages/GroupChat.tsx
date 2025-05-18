@@ -10,8 +10,121 @@ interface GroupChatProps {
   navigateTo: (page: PageType) => void
 }
 
+// Top 100 cancer types for dropdown
+const cancerTypes = [
+  "Acute Lymphoblastic Leukemia",
+  "Acute Myeloid Leukemia",
+  "Adrenal Cancer",
+  "Anal Cancer",
+  "Appendix Cancer",
+  "Astrocytoma",
+  "Basal Cell Carcinoma",
+  "Bile Duct Cancer",
+  "Bladder Cancer",
+  "Bone Cancer",
+  "Brain Cancer",
+  "Breast Cancer",
+  "Carcinoid Tumor",
+  "Cervical Cancer",
+  "Cholangiocarcinoma",
+  "Chondrosarcoma",
+  "Chronic Lymphocytic Leukemia",
+  "Chronic Myeloid Leukemia",
+  "Colorectal Cancer",
+  "Cutaneous T-Cell Lymphoma",
+  "Endometrial Cancer",
+  "Ependymoma",
+  "Esophageal Cancer",
+  "Ewing Sarcoma",
+  "Eye Cancer",
+  "Fallopian Tube Cancer",
+  "Fibrosarcoma",
+  "Gallbladder Cancer",
+  "Gastric Cancer",
+  "Gastrointestinal Stromal Tumor",
+  "Germ Cell Tumor",
+  "Glioblastoma",
+  "Glioma",
+  "Head and Neck Cancer",
+  "Hepatocellular Carcinoma",
+  "Hodgkin Lymphoma",
+  "Inflammatory Breast Cancer",
+  "Kidney Cancer",
+  "Laryngeal Cancer",
+  "Leiomyosarcoma",
+  "Liposarcoma",
+  "Liver Cancer",
+  "Lung Cancer",
+  "Lymphoma",
+  "Malignant Mesothelioma",
+  "Medulloblastoma",
+  "Melanoma",
+  "Merkel Cell Carcinoma",
+  "Mesothelioma",
+  "Multiple Myeloma",
+  "Myelodysplastic Syndromes",
+  "Myeloproliferative Neoplasms",
+  "Nasopharyngeal Cancer",
+  "Neuroblastoma",
+  "Neuroendocrine Tumors",
+  "Non-Hodgkin Lymphoma",
+  "Oligodendroglioma",
+  "Oral Cancer",
+  "Osteosarcoma",
+  "Ovarian Cancer",
+  "Pancreatic Cancer",
+  "Parathyroid Cancer",
+  "Penile Cancer",
+  "Pheochromocytoma",
+  "Pituitary Tumors",
+  "Prostate Cancer",
+  "Rectal Cancer",
+  "Renal Cell Carcinoma",
+  "Retinoblastoma",
+  "Rhabdomyosarcoma",
+  "Salivary Gland Cancer",
+  "Sarcoma",
+  "Skin Cancer",
+  "Small Intestine Cancer",
+  "Soft Tissue Sarcoma",
+  "Spinal Cord Tumors",
+  "Squamous Cell Carcinoma",
+  "Stomach Cancer",
+  "Synovial Sarcoma",
+  "Testicular Cancer",
+  "Throat Cancer",
+  "Thymus Cancer",
+  "Thyroid Cancer",
+  "Uterine Cancer",
+  "Vaginal Cancer",
+  "Vulvar Cancer",
+  "Waldenstrom Macroglobulinemia",
+  "Wilms Tumor",
+  // Additional cancers to reach 100
+  "Adrenocortical Carcinoma",
+  "Angiosarcoma",
+  "Bronchial Tumors",
+  "Burkitt Lymphoma",
+  "Carcinosarcoma",
+  "Chordoma",
+  "Craniopharyngioma",
+  "Desmoid Tumor",
+  "Ductal Carcinoma In Situ",
+  "Epithelioid Sarcoma",
+  "Extrahepatic Bile Duct Cancer",
+  "Gestational Trophoblastic Disease",
+  "Hairy Cell Leukemia",
+  "Kaposi Sarcoma",
+  "Langerhans Cell Histiocytosis",
+  "Malignant Fibrous Histiocytoma",
+  "Mycosis Fungoides",
+  "Myxofibrosarcoma",
+]
+
 const GroupChat: React.FC<GroupChatProps> = ({ navigateTo }) => {
   const [message, setMessage] = useState("")
+  const [searchTerm, setSearchTerm] = useState("")
+  const [showDropdown, setShowDropdown] = useState(false)
 
   const handleSendMessage = (e: React.FormEvent) => {
     e.preventDefault()
@@ -21,6 +134,20 @@ const GroupChat: React.FC<GroupChatProps> = ({ navigateTo }) => {
     }
   }
 
+  const filteredCancerTypes = cancerTypes.filter((cancer) => cancer.toLowerCase().includes(searchTerm.toLowerCase()))
+
+  const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value)
+    setShowDropdown(true)
+  }
+
+  const selectCancerType = (cancer: string) => {
+    setSearchTerm(cancer)
+    setShowDropdown(false)
+    // In a real app, this would trigger a search for groups related to this cancer type
+    alert(`Searching for groups related to ${cancer}...`)
+  }
+
   return (
     <div className="container page-container">
       <div className="page-header">
@@ -28,6 +155,70 @@ const GroupChat: React.FC<GroupChatProps> = ({ navigateTo }) => {
         <h1>Group Chat</h1>
       </div>
       <p className="page-description">Connect with other patients and caregivers</p>
+
+      {/* Search for groups by cancer type */}
+      <div className="card">
+        <div className="card-header">
+          <h2 className="card-title">Find Groups by Cancer Type</h2>
+        </div>
+        <div className="card-content">
+          <div className="search-container" style={{ position: "relative" }}>
+            <input
+              type="text"
+              placeholder="Search for cancer type..."
+              value={searchTerm}
+              onChange={handleSearchChange}
+              onFocus={() => setShowDropdown(true)}
+              className="search-input"
+            />
+            {showDropdown && searchTerm && (
+              <div
+                className="search-dropdown"
+                style={{
+                  position: "absolute",
+                  top: "100%",
+                  left: 0,
+                  right: 0,
+                  maxHeight: "200px",
+                  overflowY: "auto",
+                  backgroundColor: "var(--card-background)",
+                  border: "1px solid var(--border-color)",
+                  borderRadius: "4px",
+                  zIndex: 10,
+                }}
+              >
+                {filteredCancerTypes.length > 0 ? (
+                  filteredCancerTypes.map((cancer, index) => (
+                    <div
+                      key={index}
+                      className="search-item"
+                      onClick={() => selectCancerType(cancer)}
+                      style={{
+                        padding: "10px",
+                        cursor: "pointer",
+                        borderBottom: "1px solid var(--border-color)",
+                      }}
+                    >
+                      {cancer}
+                    </div>
+                  ))
+                ) : (
+                  <div className="search-item" style={{ padding: "10px" }}>
+                    No cancer types found
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+          <button
+            className="button button-primary"
+            style={{ marginTop: "10px" }}
+            onClick={() => alert(`Searching for groups related to ${searchTerm}...`)}
+          >
+            Search Groups
+          </button>
+        </div>
+      </div>
 
       <div className="card">
         <div className="card-header">

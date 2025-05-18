@@ -30,7 +30,7 @@ const FooterNav: React.FC<FooterNavProps> = ({ currentPage, navigateTo }) => {
         <span>Home</span>
       </div>
 
-      <div className="nav-item">
+      <div className="nav-item sos-container">
         <SOSButton />
       </div>
 

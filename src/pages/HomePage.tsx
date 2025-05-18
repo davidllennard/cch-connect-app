@@ -11,10 +11,10 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
   return (
-    <div className="container">
+    <div className="container home-container">
       <div className="portal-header">
         <h1 className="portal-title">Medical Access Portal</h1>
-        <p className="portal-description">Connect with your healthcare providers and manage appointments</p>
+        {/* Removed page descriptor */}
       </div>
 
       <div className="portal-grid">
@@ -66,11 +66,11 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
           }
         />
 
-        {/* AI Chat Assistant */}
+        {/* Ask Rupert (formerly AI Chat Assistant) */}
         <PortalCard
-          title="AI Chat Assistant"
+          title="Ask Rupert"
           description="Get answers to your questions"
-          onClick={() => navigateTo("ai-chat-assistant")}
+          onClick={() => navigateTo("ask-rupert")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
         {/* My Cancer */}
         <PortalCard
           title="My Cancer"
-          description="Information specific to your cancer type"
+          description="Everything in one place"
           onClick={() => navigateTo("my-cancer")}
           icon={
             <svg
@@ -128,6 +128,26 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
               <line x1="16" y1="13" x2="8" y2="13"></line>
               <line x1="16" y1="17" x2="8" y2="17"></line>
               <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+          }
+        />
+
+        {/* My Mental Health - New */}
+        <PortalCard
+          title="My Mental Health"
+          description="Support for your emotional wellbeing"
+          onClick={() => navigateTo("mental-health")}
+          icon={
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
             </svg>
           }
         />
@@ -185,7 +205,7 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
         {/* Calendar Hub */}
         <PortalCard
           title="Calendar Hub"
-          description="Manage all your appointments and personal events in one place"
+          description="Manage all your appointments and events"
           onClick={() => navigateTo("calendar-hub")}
           icon={
             <svg
@@ -204,30 +224,10 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo }) => {
             </svg>
           }
         />
-
-        {/* MyChart */}
-        <PortalCard
-          title="MyChart"
-          description="Access your medical records"
-          onClick={() => navigateTo("mychart")}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
-          }
-        />
       </div>
 
       {/* Language selector at bottom of page */}
-      <div style={{ marginTop: "30px" }}>
+      <div style={{ marginTop: "20px" }}>
         <LanguageSelector />
       </div>
     </div>
