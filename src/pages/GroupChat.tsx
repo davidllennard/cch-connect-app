@@ -8,6 +8,7 @@ import "../styles/PageTemplate.css"
 
 interface GroupChatProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
 // Top 100 cancer types for dropdown
@@ -121,7 +122,7 @@ const cancerTypes = [
   "Myxofibrosarcoma",
 ]
 
-const GroupChat: React.FC<GroupChatProps> = ({ navigateTo }) => {
+const GroupChat: React.FC<GroupChatProps> = ({ navigateTo, handleInactiveButton }) => {
   const [message, setMessage] = useState("")
   const [searchTerm, setSearchTerm] = useState("")
   const [showDropdown, setShowDropdown] = useState(false)

@@ -23,6 +23,9 @@ import CalendarHub from "./pages/CalendarHub"
 import Profile from "./pages/Profile"
 import PuzzlesAndGames from "./pages/PuzzlesAndGames"
 import AskRupert from "./pages/AskRupert"
+import DiagnosisSummary from "./pages/DiagnosisSummary"
+import TreatmentPlan from "./pages/TreatmentPlan"
+import MentalHealth from "./pages/MentalHealth"
 import "./styles/index.css"
 
 // Define page types for type safety
@@ -116,58 +119,60 @@ const App: React.FC = () => {
     }
   }
 
-  // Add a function to handle iframe content for inactive buttons
+  // Add a function to handle inactive button clicks
   const handleInactiveButton = () => {
-    // This would be implemented in a real application
-    // For now, we'll just show an alert
-    alert("This feature is not functional yet. Please try again later.")
+    alert("Not Functional")
   }
 
   // Render the current page based on state
   const renderCurrentPage = () => {
     switch (currentPage) {
       case "home":
-        return <HomePage navigateTo={navigateTo} />
+        return <HomePage navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "oncology":
-        return <OncologyPage navigateTo={navigateTo} />
+        return <OncologyPage navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "palliative-care":
-        return <PalliativeCare navigateTo={navigateTo} />
+        return <PalliativeCare navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "nurse-navigation":
-        return <NurseNavigation navigateTo={navigateTo} />
+        return <NurseNavigation navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "caregivers":
-        return <Caregivers navigateTo={navigateTo} />
+        return <Caregivers navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "my-cancer":
-        return <MyCancer navigateTo={navigateTo} />
+        return <MyCancer navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "telemedicine":
-        return <Telemedicine navigateTo={navigateTo} />
+        return <Telemedicine navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "mychart":
-        return <MyChart navigateTo={navigateTo} />
+        return <MyChart navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "lab-reports":
-        return <LabReports navigateTo={navigateTo} />
+        return <LabReports navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "symptom-tracker":
-        return <SymptomTracker navigateTo={navigateTo} />
+        return <SymptomTracker navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "group-chat":
-        return <GroupChat navigateTo={navigateTo} />
-      case "ai-chat-assistant":
-        return <AskRupert navigateTo={navigateTo} />
+        return <GroupChat navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
+      case "ask-rupert":
+        return <AskRupert navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "research-portal":
-        return <ResearchPortal navigateTo={navigateTo} />
+        return <ResearchPortal navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "entertainment-hub":
-        return <EntertainmentHub navigateTo={navigateTo} />
+        return <EntertainmentHub navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "medical-profile":
-        return <MedicalProfile navigateTo={navigateTo} />
+        return <MedicalProfile navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "pill-scheduler":
-        return <PillScheduler navigateTo={navigateTo} />
+        return <PillScheduler navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "calendar-hub":
-        return <CalendarHub navigateTo={navigateTo} />
+        return <CalendarHub navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       case "profile":
         return <Profile navigateTo={navigateTo} />
       case "puzzles-and-games":
-        return <PuzzlesAndGames navigateTo={navigateTo} />
-      case "ask-rupert":
-        return <AskRupert navigateTo={navigateTo} />
+        return <PuzzlesAndGames navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
+      case "diagnosis-summary":
+        return <DiagnosisSummary navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
+      case "treatment-plan":
+        return <TreatmentPlan navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
+      case "mental-health":
+        return <MentalHealth navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
       default:
-        return <HomePage navigateTo={navigateTo} />
+        return <HomePage navigateTo={navigateTo} handleInactiveButton={handleInactiveButton} />
     }
   }
 
@@ -178,6 +183,7 @@ const App: React.FC = () => {
           <div className="password-modal-content">
             <h2>Cancer Care Hub</h2>
             <p>Please enter your password to continue</p>
+            <p className="password-hint">pw: 1234 for this demo</p>
             <input
               type="password"
               value={password}

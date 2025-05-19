@@ -810,6 +810,13 @@ label {
   width: 100%;
 }
 
+.password-modal-content p.password-hint {
+  font-size: 14px;
+  color: var(--primary-color); /* Changed to match the login button color */
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
 /* Profile Page Styles */
 .form-grid {
   display: grid;
@@ -833,6 +840,7 @@ label {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 10px;
+  align-items: start;
 }
 
 .hobby-item {
@@ -904,4 +912,49 @@ label {
 
 .disclaimer strong {
   font-weight: 500;
+}
+
+/* CEO Message Styles */
+.ceo-message {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #3b82f6;
+  font-family: var(--tagline-font); /* Changed to match tagline font */
+  font-style: italic;
+}
+
+.dark-mode .ceo-message {
+  background-color: #2d3748;
+  border-left: 4px solid #60a5fa;
+}
+
+.ceo-signature {
+  font-style: italic;
+  text-align: right;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+.cuisine-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.cuisine-item {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Art Genres Dropdown */
+.art-genres-container {
+  margin-top: 10px;
+}
+
+.other-hobby-container {
+  margin-top: 15px;
 }

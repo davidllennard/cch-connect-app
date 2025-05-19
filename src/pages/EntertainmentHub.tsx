@@ -7,9 +7,10 @@ import type { PageType } from "../App"
 
 interface EntertainmentHubProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
-const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
+const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleInactiveButton }) => {
   return (
     <div className="container page-container">
       <div className="page-header">
@@ -41,62 +42,30 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
           }
         />
 
-        {/* YouTube */}
-        <PortalCard
-          title="YouTube"
-          description="Watch videos and tutorials"
-          onClick={() => window.open("https://www.youtube.com", "_blank")}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="#FF0000"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#FF0000"></polygon>
-            </svg>
-          }
-        />
+        {/* Streaming Services */}
+        <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+          <div className="portal-card-icon">
+            <img src="/youtube-logo.png" alt="YouTube" style={{ width: "24px", height: "24px" }} />
+          </div>
+          <h3 className="portal-card-title">YouTube</h3>
+          <p className="portal-card-description">Watch videos and tutorials</p>
+        </div>
 
-        {/* Netflix */}
-        <PortalCard
-          title="Netflix"
-          description="Watch movies and TV shows"
-          onClick={() => window.open("https://www.netflix.com", "_blank")}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="#E50914"
-              stroke="#E50914"
-              strokeWidth="0.2"
-            >
-              <path d="M5 2v20l7-15v15l7-20z" />
-            </svg>
-          }
-        />
+        <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+          <div className="portal-card-icon">
+            <img src="/netflix-logo.png" alt="Netflix" style={{ width: "24px", height: "24px" }} />
+          </div>
+          <h3 className="portal-card-title">Netflix</h3>
+          <p className="portal-card-description">Stream movies and shows</p>
+        </div>
 
-        {/* Spotify */}
-        <PortalCard
-          title="Spotify"
-          description="Listen to music and podcasts"
-          onClick={() => window.open("https://www.spotify.com", "_blank")}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="#1DB954"
-              stroke="#1DB954"
-              strokeWidth="0.2"
-            >
-              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.5 14.5c-.2.3-.6.4-1 .2-2.8-1.7-6.3-2-10.4-1.2-.4.1-.8-.2-.9-.6-.1-.4.2-.8.6-.9 4.5-1 8.4-.6 11.5 1.4.4.3.5.7.2 1.1zm1.2-2.7c-.3.4-.8.5-1.2.3-3.2-2-8.1-2.6-11.9-1.4-.5.1-1-.1-1.2-.6-.1-.5.1-1 .6-1.2 4.4-1.3 9.8-.7 13.5 1.7.5.2.6.7.2 1.2zm.1-2.8c-3.8-2.3-10.1-2.5-13.8-1.4-.6.1-1.2-.2-1.3-.8-.1-.6.2-1.2.8-1.3 4.2-1.3 11.1-1 15.5 1.6.6.3.8 1.1.4 1.6-.2.4-1 .7-1.6.3z" />
-            </svg>
-          }
-        />
+        <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+          <div className="portal-card-icon">
+            <img src="/spotify-logo.png" alt="Spotify" style={{ width: "24px", height: "24px" }} />
+          </div>
+          <h3 className="portal-card-title">Spotify</h3>
+          <p className="portal-card-description">Listen to music and podcasts</p>
+        </div>
 
         {/* Your Music Library */}
         <PortalCard
@@ -142,12 +111,28 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
           }
         />
 
+        {/* Nature Therapy */}
+        <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+          <div className="portal-card-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path>
+            </svg>
+          </div>
+          <h3 className="portal-card-title">Nature Therapy</h3>
+          <p className="portal-card-description">Relax with nature sounds and scenes</p>
+        </div>
+
         {/* Guided Meditation */}
-        <PortalCard
-          title="Guided Meditation"
-          description="Relax and reduce stress"
-          onClick={() => window.open("https://youtu.be/o8vsZQW0BbU?si=EBaBcTdalpfqum7u", "_blank")}
-          icon={
+        <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+          <div className="portal-card-icon">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -160,28 +145,10 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
               <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
               <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
             </svg>
-          }
-        />
-
-        {/* Nature Therapy */}
-        <PortalCard
-          title="Nature Therapy"
-          description="Immerse yourself in calming natural environments"
-          onClick={() => window.open("https://youtu.be/SHIXRwjjscY?si=Z6v9GDfjnavubEh6", "_blank")}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-            </svg>
-          }
-        />
+          </div>
+          <h3 className="portal-card-title">Guided Meditation</h3>
+          <p className="portal-card-description">Follow guided meditation sessions</p>
+        </div>
 
         {/* Podcasts */}
         <PortalCard

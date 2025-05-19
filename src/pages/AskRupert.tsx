@@ -8,9 +8,10 @@ import "../styles/PageTemplate.css"
 
 interface AskRupertProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
-const AskRupert: React.FC<AskRupertProps> = ({ navigateTo }) => {
+const AskRupert: React.FC<AskRupertProps> = ({ navigateTo, handleInactiveButton }) => {
   const [message, setMessage] = useState("")
 
   const handleSendMessage = (e: React.FormEvent) => {
@@ -115,19 +116,27 @@ const AskRupert: React.FC<AskRupertProps> = ({ navigateTo }) => {
           <div className="topic-list">
             <div className="topic-item">
               <h3>Managing Treatment Side Effects</h3>
-              <button className="button button-outline">Ask About This</button>
+              <button className="ask-button" onClick={handleInactiveButton}>
+                Ask about this
+              </button>
             </div>
             <div className="topic-item">
               <h3>Nutrition During Cancer Treatment</h3>
-              <button className="button button-outline">Ask About This</button>
+              <button className="ask-button" onClick={handleInactiveButton}>
+                Ask about this
+              </button>
             </div>
             <div className="topic-item">
               <h3>Exercise and Physical Activity</h3>
-              <button className="button button-outline">Ask About This</button>
+              <button className="ask-button" onClick={handleInactiveButton}>
+                Ask about this
+              </button>
             </div>
             <div className="topic-item">
               <h3>Emotional Well-being</h3>
-              <button className="button button-outline">Ask About This</button>
+              <button className="ask-button" onClick={handleInactiveButton}>
+                Ask about this
+              </button>
             </div>
           </div>
         </div>

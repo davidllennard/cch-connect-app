@@ -19,39 +19,89 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
     cancerDiagnosis: "",
     diagnosisDate: "",
     liveAlone: "",
+    maritalStatus: "",
+    singleParent: "",
+    likeToCook: "",
     topMovies: "",
+    topTVShows: "",
     topBands: "",
     favoriteAuthors: "",
     makeArt: "",
+    artGenre: "",
     playInstrument: "",
     instrumentType: "",
     canSing: "",
     specialTalent: "",
+    otherHobby: "",
   })
 
   const [hobbies, setHobbies] = useState<string[]>([])
+  const [cuisines, setCuisines] = useState<string[]>([])
 
+  // Sort hobby options alphabetically
   const hobbyOptions = [
-    "Reading",
-    "Gardening",
-    "Cooking",
-    "Hiking",
-    "Photography",
-    "Painting",
-    "Writing",
-    "Music",
-    "Travel",
-    "Sports",
-    "Fishing",
-    "Knitting",
-    "Woodworking",
-    "Yoga",
-    "Meditation",
     "Bird watching",
     "Collecting",
+    "Cooking",
     "Dancing",
+    "Fishing",
     "Gaming",
+    "Gardening",
+    "Hiking",
+    "Knitting",
+    "Meditation",
+    "Music",
+    "Painting",
+    "Photography",
+    "Reading",
+    "Sports",
+    "Travel",
     "Volunteering",
+    "Woodworking",
+    "Writing",
+    "Yoga",
+  ]
+
+  const cuisineOptions = [
+    "American",
+    "Brazilian",
+    "Caribbean",
+    "Chinese",
+    "Ethiopian",
+    "French",
+    "German",
+    "Greek",
+    "Indian",
+    "Italian",
+    "Japanese",
+    "Korean",
+    "Lebanese",
+    "Mexican",
+    "Moroccan",
+    "Russian",
+    "Spanish",
+    "Thai",
+    "Turkish",
+    "Vietnamese",
+  ]
+
+  const artGenreOptions = [
+    "Digital Art",
+    "Drawing",
+    "Painting",
+    "Sculpture",
+    "Photography",
+    "Graphic Design",
+    "Animation",
+    "Poetry",
+    "Book Writing",
+    "Music Composition",
+    "Film Making",
+    "Crafts",
+    "Ceramics",
+    "Printmaking",
+    "Mixed Media",
+    "Other",
   ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -67,6 +117,14 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
     }
   }
 
+  const handleCuisineChange = (cuisine: string) => {
+    if (cuisines.includes(cuisine)) {
+      setCuisines(cuisines.filter((c) => c !== cuisine))
+    } else {
+      setCuisines([...cuisines, cuisine])
+    }
+  }
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     alert("Profile saved successfully!")
@@ -79,6 +137,19 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
         <h1>My Profile</h1>
       </div>
       <p className="page-description">Personalize your journey</p>
+
+      <div className="ceo-message">
+        <p>
+          Navigating cancer is deeply personal, with each journey unique. Personalizing your approach is
+          crucial—embracing treatments, support systems, and coping mechanisms that align with your individual needs and
+          values. By recognizing your specific challenges, likes and strengths, the Connect App becomes your steadfast
+          companion, adapting to your changing needs rather than imposing rigid protocols. This personalized partnership
+          preserves your dignity and agency when control feels elusive, ensuring medical decisions and support honor
+          your distinct physical, emotional, and spiritual requirements. When care is tailored to you, the Connect App
+          becomes a compassionate ally throughout your journey.
+        </p>
+        <p className="ceo-signature">David Lennard, CEO and Principal Founder</p>
+      </div>
 
       <form onSubmit={handleSubmit}>
         <div className="card">
@@ -116,6 +187,25 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
               <div className="form-group">
                 <label htmlFor="zipCode">Zip Code</label>
                 <input type="text" id="zipCode" name="zipCode" value={formData.zipCode} onChange={handleInputChange} />
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="maritalStatus">Marital Status</label>
+                <select
+                  id="maritalStatus"
+                  name="maritalStatus"
+                  value={formData.maritalStatus}
+                  onChange={handleInputChange}
+                >
+                  <option value="">Select</option>
+                  <option value="single">Single</option>
+                  <option value="married">Married</option>
+                  <option value="divorced">Divorced</option>
+                  <option value="widowed">Widowed</option>
+                  <option value="separated">Separated</option>
+                  <option value="domestic-partnership">Domestic Partnership</option>
+                  <option value="prefer-not-to-say">Prefer not to say</option>
+                </select>
               </div>
             </div>
           </div>
@@ -174,6 +264,32 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
                   </label>
                 </div>
               </div>
+
+              <div className="form-group">
+                <label htmlFor="singleParent">Are you a single parent?</label>
+                <div className="radio-group">
+                  <label>
+                    <input
+                      type="radio"
+                      name="singleParent"
+                      value="yes"
+                      checked={formData.singleParent === "yes"}
+                      onChange={handleInputChange}
+                    />{" "}
+                    Yes
+                  </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="singleParent"
+                      value="no"
+                      checked={formData.singleParent === "no"}
+                      onChange={handleInputChange}
+                    />{" "}
+                    No
+                  </label>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -191,6 +307,18 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
                 value={formData.topMovies}
                 onChange={handleInputChange}
                 placeholder="Enter your favorite movies, separated by commas"
+                rows={3}
+              ></textarea>
+            </div>
+
+            <div className="form-group">
+              <label htmlFor="topTVShows">Top 20 TV Shows of All Time</label>
+              <textarea
+                id="topTVShows"
+                name="topTVShows"
+                value={formData.topTVShows}
+                onChange={handleInputChange}
+                placeholder="Enter your favorite TV shows, separated by commas"
                 rows={3}
               ></textarea>
             </div>
@@ -220,6 +348,50 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="likeToCook">Do you like to cook?</label>
+              <div className="radio-group">
+                <label>
+                  <input
+                    type="radio"
+                    name="likeToCook"
+                    value="yes"
+                    checked={formData.likeToCook === "yes"}
+                    onChange={handleInputChange}
+                  />{" "}
+                  Yes
+                </label>
+                <label>
+                  <input
+                    type="radio"
+                    name="likeToCook"
+                    value="no"
+                    checked={formData.likeToCook === "no"}
+                    onChange={handleInputChange}
+                  />{" "}
+                  No
+                </label>
+              </div>
+            </div>
+
+            {formData.likeToCook === "yes" && (
+              <div className="form-group">
+                <label>Favorite Cuisines</label>
+                <div className="cuisine-grid">
+                  {cuisineOptions.map((cuisine) => (
+                    <label key={cuisine} className="cuisine-item">
+                      <input
+                        type="checkbox"
+                        checked={cuisines.includes(cuisine)}
+                        onChange={() => handleCuisineChange(cuisine)}
+                      />{" "}
+                      {cuisine}
+                    </label>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="form-group">
               <label>Hobbies and Areas of Interest</label>
               <div className="hobby-grid">
                 {hobbyOptions.map((hobby) => (
@@ -232,6 +404,18 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
                     {hobby}
                   </label>
                 ))}
+              </div>
+
+              <div className="other-hobby-container">
+                <label htmlFor="otherHobby">Other Hobbies</label>
+                <textarea
+                  id="otherHobby"
+                  name="otherHobby"
+                  value={formData.otherHobby}
+                  onChange={handleInputChange}
+                  placeholder="Enter any other hobbies or interests not listed above"
+                  rows={2}
+                ></textarea>
               </div>
             </div>
 
@@ -260,6 +444,20 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
                 </label>
               </div>
             </div>
+
+            {formData.makeArt === "yes" && (
+              <div className="form-group art-genres-container">
+                <label htmlFor="artGenre">What type of art do you create?</label>
+                <select id="artGenre" name="artGenre" value={formData.artGenre} onChange={handleInputChange}>
+                  <option value="">Select a genre</option>
+                  {artGenreOptions.map((genre) => (
+                    <option key={genre} value={genre.toLowerCase().replace(/\s+/g, "-")}>
+                      {genre}
+                    </option>
+                  ))}
+                </select>
+              </div>
+            )}
 
             <div className="form-group">
               <label htmlFor="playInstrument">Do you play a musical instrument?</label>

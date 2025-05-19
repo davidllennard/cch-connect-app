@@ -6,9 +6,10 @@ import type { PageType } from "../App"
 
 interface MyCancerProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
-const MyCancer: React.FC<MyCancerProps> = ({ navigateTo }) => {
+const MyCancer: React.FC<MyCancerProps> = ({ navigateTo, handleInactiveButton }) => {
   return (
     <div className="container page-container">
       <div className="page-header">
@@ -173,7 +174,7 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo }) => {
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "20px" }}
           >
             {/* Medications */}
-            <div className="portal-card" onClick={() => alert("Opening Medications...")} style={{ cursor: "pointer" }}>
+            <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
               <div className="portal-card-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +193,7 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo }) => {
             </div>
 
             {/* Billing */}
-            <div className="portal-card" onClick={() => alert("Opening Billing...")} style={{ cursor: "pointer" }}>
+            <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
               <div className="portal-card-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

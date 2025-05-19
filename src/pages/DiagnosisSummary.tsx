@@ -6,9 +6,10 @@ import type { PageType } from "../App"
 
 interface DiagnosisSummaryProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
-const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo }) => {
+const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo, handleInactiveButton }) => {
   return (
     <div className="container page-container">
       <div className="page-header">
@@ -18,61 +19,25 @@ const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo }) => {
 
       <div className="card">
         <div className="card-header">
-          <h2 className="card-title">Multiple Myeloma Diagnosis</h2>
+          <h2 className="card-title">Multiple Myeloma</h2>
         </div>
         <div className="card-content">
-          <div className="diagnosis-grid">
-            <div className="diagnosis-column">
-              <div className="diagnosis-item">
-                <h3>Cancer Type</h3>
-                <p>Multiple Myeloma (Plasma Cell Myeloma)</p>
-              </div>
-
-              <div className="diagnosis-item">
-                <h3>Diagnosis Date</h3>
-                <p>March 12, 2023</p>
-              </div>
-
-              <div className="diagnosis-item">
-                <h3>Stage</h3>
-                <p>Stage II (ISS Staging System)</p>
-              </div>
-
-              <div className="diagnosis-item">
-                <h3>Risk Stratification</h3>
-                <p>Standard Risk</p>
-              </div>
+          <div className="diagnosis-details">
+            <div className="diagnosis-item">
+              <h3>Diagnosis Date</h3>
+              <p>March 15, 2023</p>
             </div>
-
-            <div className="diagnosis-column">
-              <div className="diagnosis-item">
-                <h3>Cytogenetics</h3>
-                <p>
-                  t(11;14) translocation detected
-                  <br />
-                  No high-risk abnormalities
-                </p>
-              </div>
-
-              <div className="diagnosis-item">
-                <h3>Laboratory Values at Diagnosis</h3>
-                <p>
-                  M-protein: 2.8 g/dL
-                  <br />
-                  Hemoglobin: 10.2 g/dL
-                  <br />
-                  Calcium: 10.8 mg/dL
-                  <br />
-                  Creatinine: 1.2 mg/dL
-                  <br />
-                  Beta-2 microglobulin: 4.2 mg/L
-                </p>
-              </div>
-
-              <div className="diagnosis-item">
-                <h3>Bone Involvement</h3>
-                <p>Multiple lytic lesions in skull, spine, and pelvis</p>
-              </div>
+            <div className="diagnosis-item">
+              <h3>Stage</h3>
+              <p>Stage II</p>
+            </div>
+            <div className="diagnosis-item">
+              <h3>Type</h3>
+              <p>IgG Kappa</p>
+            </div>
+            <div className="diagnosis-item">
+              <h3>Cytogenetics</h3>
+              <p>t(11;14)</p>
             </div>
           </div>
         </div>
@@ -80,32 +45,29 @@ const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo }) => {
 
       <div className="card">
         <div className="card-header">
-          <h2 className="card-title">Diagnostic Procedures</h2>
+          <h2 className="card-title">Key Diagnostic Tests</h2>
         </div>
         <div className="card-content">
-          <div className="procedure-list">
-            <div className="procedure-item">
+          <div className="test-results">
+            <div className="test-item">
               <h3>Bone Marrow Biopsy</h3>
-              <p>Date: March 5, 2023</p>
-              <p>Result: 35% plasma cells in bone marrow</p>
+              <p>30% plasma cells</p>
+              <p className="test-date">March 10, 2023</p>
             </div>
-
-            <div className="procedure-item">
-              <h3>Serum Protein Electrophoresis (SPEP)</h3>
-              <p>Date: March 3, 2023</p>
-              <p>Result: IgG kappa monoclonal protein detected</p>
+            <div className="test-item">
+              <h3>Serum Protein Electrophoresis</h3>
+              <p>M-protein: 2.5 g/dL</p>
+              <p className="test-date">March 8, 2023</p>
             </div>
-
-            <div className="procedure-item">
+            <div className="test-item">
               <h3>Skeletal Survey</h3>
-              <p>Date: March 4, 2023</p>
-              <p>Result: Multiple lytic lesions detected in skull, spine, and pelvis</p>
+              <p>Lytic lesions in skull and right femur</p>
+              <p className="test-date">March 12, 2023</p>
             </div>
-
-            <div className="procedure-item">
-              <h3>PET/CT Scan</h3>
-              <p>Date: March 7, 2023</p>
-              <p>Result: Increased uptake in multiple bone lesions, no extramedullary disease</p>
+            <div className="test-item">
+              <h3>Free Light Chain Assay</h3>
+              <p>Kappa/Lambda ratio: 8.5</p>
+              <p className="test-date">March 8, 2023</p>
             </div>
           </div>
         </div>
@@ -117,12 +79,29 @@ const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo }) => {
         </div>
         <div className="card-content">
           <ul className="symptom-list">
-            <li>Bone pain (particularly in back and ribs)</li>
+            <li>Bone pain (lower back and ribs)</li>
             <li>Fatigue</li>
-            <li>Unexplained weight loss (15 lbs over 3 months)</li>
-            <li>Recurrent infections</li>
-            <li>Mild anemia symptoms</li>
+            <li>Anemia (Hemoglobin 9.8 g/dL)</li>
+            <li>Elevated calcium (11.2 mg/dL)</li>
+            <li>Renal insufficiency (Creatinine 1.8 mg/dL)</li>
           </ul>
+        </div>
+      </div>
+
+      <div className="card">
+        <div className="card-header">
+          <h2 className="card-title">Risk Stratification</h2>
+        </div>
+        <div className="card-content">
+          <p>
+            <strong>R-ISS Stage:</strong> II
+          </p>
+          <p>
+            <strong>Risk Category:</strong> Standard Risk
+          </p>
+          <p>
+            <strong>Prognostic Factors:</strong> Presence of t(11;14), absence of high-risk cytogenetics
+          </p>
         </div>
       </div>
     </div>
