@@ -3,97 +3,99 @@
 import type React from "react"
 import BackButton from "../components/BackButton"
 import TeamMemberCard from "../components/TeamMemberCard"
-import AppointmentCard from "../components/AppointmentCard"
 import type { PageType } from "../App"
 
 interface OncologyPageProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
-const OncologyPage: React.FC<OncologyPageProps> = ({ navigateTo }) => {
+const OncologyPage: React.FC<OncologyPageProps> = ({ navigateTo, handleInactiveButton }) => {
   return (
     <div className="container page-container">
       <div className="page-header">
-        <BackButton onClick={() => navigateTo("home")} />
-        <h1>Oncology</h1>
-      </div>
-      {/* Removed page description */}
-
-      <div className="card">
-        <div className="card-header">
-          <h2 className="card-title">Oncology Team</h2>
-        </div>
-        <div className="card-content">
-          <TeamMemberCard
-            name="Dr. Emily Johnson"
-            role="Medical Oncologist"
-            description="Specializes in breast and colorectal cancers"
-            onSchedule={() => alert("Scheduling appointment with Dr. Emily Johnson")}
-          />
-
-          <TeamMemberCard
-            name="Dr. Michael Chen"
-            role="Radiation Oncologist"
-            description="Specializes in precision radiation therapy"
-            onSchedule={() => alert("Scheduling appointment with Dr. Michael Chen")}
-          />
-
-          <TeamMemberCard
-            name="Dr. Sarah Williams"
-            role="Surgical Oncologist"
-            description="Specializes in minimally invasive surgical techniques"
-            onSchedule={() => alert("Scheduling appointment with Dr. Sarah Williams")}
-          />
-        </div>
+        <BackButton onClick={() => navigateTo("my-cancer")} />
+        <h1>Oncology Team</h1>
       </div>
 
-      <div className="card">
-        <div className="card-header">
-          <h2 className="card-title">Upcoming Appointments</h2>
-        </div>
-        <div className="card-content">
-          <AppointmentCard
-            month="May"
-            date="20"
-            year="2023"
-            title="Oncology Follow-up"
-            doctor="Dr. Emily Johnson"
-            location="Memorial Cancer Center, Suite 300"
-            time="10:00 AM"
-            onReschedule={() => alert("Rescheduling appointment")}
-            onCancel={() => alert("Cancelling appointment")}
-          />
-        </div>
-      </div>
+      <div className="team-grid">
+        <TeamMemberCard
+          name="Dr. Sarah Johnson"
+          role="Medical Oncologist"
+          specialty="Multiple Myeloma Specialist"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          contactInfo={{
+            email: "sarah.johnson@hospital.org",
+            phone: "(555) 123-4567",
+            office: "Cancer Center, Floor 3, Room 302",
+          }}
+          availability="Mon, Wed, Fri: 9am-5pm"
+        />
 
-      <div className="card">
-        <div className="card-header">
-          <h2 className="card-title">Treatment Plan</h2>
-        </div>
-        <div className="card-content">
-          <div className="treatment-list">
-            <div className="treatment-item">
-              <div className="treatment-header">
-                <h3>Chemotherapy</h3>
-                <span className="badge badge-success">In Progress</span>
-              </div>
-              <p>AC-T Regimen (Adriamycin, Cyclophosphamide, followed by Taxol)</p>
-              <p className="treatment-meta">Started on March 15, 2023 • 2 of 8 cycles completed</p>
-              <div className="progress-bar">
-                <div className="progress-bar-fill" style={{ width: "25%" }}></div>
-              </div>
-            </div>
+        <TeamMemberCard
+          name="Dr. Michael Chen"
+          role="Hematologist"
+          specialty="Blood Disorders"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          contactInfo={{
+            email: "michael.chen@hospital.org",
+            phone: "(555) 123-4568",
+            office: "Cancer Center, Floor 3, Room 310",
+          }}
+          availability="Tue, Thu: 8am-4pm"
+        />
 
-            <div className="treatment-item">
-              <div className="treatment-header">
-                <h3>Radiation Therapy</h3>
-                <span className="badge badge-warning">Upcoming</span>
-              </div>
-              <p>External Beam Radiation</p>
-              <p className="treatment-meta">Scheduled to begin July 10, 2023</p>
-            </div>
-          </div>
-        </div>
+        <TeamMemberCard
+          name="Dr. Lisa Rodriguez"
+          role="Radiation Oncologist"
+          specialty="Targeted Radiation Therapy"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          contactInfo={{
+            email: "lisa.rodriguez@hospital.org",
+            phone: "(555) 123-4569",
+            office: "Cancer Center, Floor 2, Room 215",
+          }}
+          availability="Mon, Wed, Fri: 10am-6pm"
+        />
+
+        <TeamMemberCard
+          name="Dr. James Wilson"
+          role="Surgical Oncologist"
+          specialty="Minimally Invasive Procedures"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          contactInfo={{
+            email: "james.wilson@hospital.org",
+            phone: "(555) 123-4570",
+            office: "Cancer Center, Floor 4, Room 405",
+          }}
+          availability="Tue, Thu: 7am-3pm"
+        />
+
+        <TeamMemberCard
+          name="Amanda Thompson"
+          role="Oncology Nurse Practitioner"
+          specialty="Patient Education & Symptom Management"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          contactInfo={{
+            email: "amanda.thompson@hospital.org",
+            phone: "(555) 123-4571",
+            office: "Cancer Center, Floor 3, Room 315",
+          }}
+          availability="Mon-Fri: 8am-4pm"
+        />
+
+        <TeamMemberCard
+          name="Robert Davis"
+          role="Oncology Pharmacist"
+          specialty="Chemotherapy & Medication Management"
+          imageUrl="/placeholder.svg?height=150&width=150"
+          contactInfo={{
+            email: "robert.davis@hospital.org",
+            phone: "(555) 123-4572",
+            office: "Cancer Center, Floor 1, Room 120",
+          }}
+          availability="Mon-Fri: 9am-5pm"
+        />
       </div>
     </div>
   )

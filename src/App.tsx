@@ -57,9 +57,6 @@ export type PageType =
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>("home")
   const [darkMode, setDarkMode] = useState<boolean>(false)
-  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
-  const [password, setPassword] = useState<string>("")
-  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(true)
 
   useEffect(() => {
     // Check for saved theme preference or use device preference
@@ -108,15 +105,6 @@ const App: React.FC = () => {
   const navigateTo = (page: PageType) => {
     setCurrentPage(page)
     window.scrollTo(0, 0)
-  }
-
-  const validatePassword = () => {
-    if (password === "1234") {
-      setIsAuthenticated(true)
-      setShowPasswordModal(false)
-    } else {
-      alert("Incorrect password. Please try again.")
-    }
   }
 
   // Add a function to handle inactive button clicks
@@ -178,30 +166,9 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      {showPasswordModal && !isAuthenticated ? (
-        <div className="password-modal">
-          <div className="password-modal-content">
-            <h2>Cancer Care Hub</h2>
-            <p>Please enter your password to continue</p>
-            <p className="password-hint">pw: 1234 for this demo</p>
-            <input
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              placeholder="Enter password"
-            />
-            <button className="button button-primary" onClick={validatePassword}>
-              Login
-            </button>
-          </div>
-        </div>
-      ) : (
-        <>
-          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} navigateTo={navigateTo} />
-          <main className="main-content">{renderCurrentPage()}</main>
-          <FooterNav currentPage={currentPage} navigateTo={navigateTo} />
-        </>
-      )}
+      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} navigateTo={navigateTo} />
+      <main className="main-content">{renderCurrentPage()}</main>
+      <FooterNav currentPage={currentPage} navigateTo={navigateTo} />
     </div>
   )
 }

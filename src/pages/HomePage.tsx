@@ -3,7 +3,6 @@
 import type React from "react"
 import PortalCard from "../components/PortalCard"
 import LanguageSelector from "../components/LanguageSelector"
-import SOSButton from "../components/SOSButton"
 import type { PageType } from "../App"
 
 interface HomePageProps {
@@ -252,7 +251,6 @@ const HomePage: React.FC<HomePageProps> = ({ navigateTo, handleInactiveButton })
       {/* Language selector at bottom of page */}
       <div style={{ marginTop: "20px" }}>
         <LanguageSelector />
-        <SOSButton onClick={handleInactiveButton} />
       </div>
     </div>
   )
