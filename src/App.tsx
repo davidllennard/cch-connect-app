@@ -15,13 +15,21 @@ import MyChart from "./pages/MyChart"
 import LabReports from "./pages/LabReports"
 import SymptomTracker from "./pages/SymptomTracker"
 import GroupChat from "./pages/GroupChat"
-import AIChatAssistant from "./pages/AIChatAssistant"
 import ResearchPortal from "./pages/ResearchPortal"
 import EntertainmentHub from "./pages/EntertainmentHub"
 import MedicalProfile from "./pages/MedicalProfile"
 import PillScheduler from "./pages/PillScheduler"
 import CalendarHub from "./pages/CalendarHub"
 import "./styles/index.css"
+
+// Update the imports to include all new pages
+import AskRupert from "./pages/AskRupert"
+import MentalHealth from "./pages/MentalHealth"
+import DiagnosisSummary from "./pages/DiagnosisSummary"
+import TreatmentPlan from "./pages/TreatmentPlan"
+import ClinicalTrialsByCountry from "./pages/ClinicalTrialsByCountry"
+import DeepResearch from "./pages/DeepResearch"
+import ComedyHour from "./pages/ComedyHour"
 
 // Define page types for type safety
 export type PageType =
@@ -36,12 +44,18 @@ export type PageType =
   | "lab-reports"
   | "symptom-tracker"
   | "group-chat"
-  | "ai-chat-assistant"
+  | "ask-rupert"
   | "research-portal"
   | "entertainment-hub"
   | "medical-profile"
   | "pill-scheduler"
   | "calendar-hub"
+  | "mental-health"
+  | "diagnosis-summary"
+  | "treatment-plan"
+  | "clinical-trials-by-country"
+  | "deep-research"
+  | "comedy-hour"
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>("home")
@@ -96,7 +110,7 @@ const App: React.FC = () => {
     window.scrollTo(0, 0)
   }
 
-  // Render the current page based on state
+  // Update the renderCurrentPage function to include all new routes
   const renderCurrentPage = () => {
     switch (currentPage) {
       case "home":
@@ -121,8 +135,8 @@ const App: React.FC = () => {
         return <SymptomTracker navigateTo={navigateTo} />
       case "group-chat":
         return <GroupChat navigateTo={navigateTo} />
-      case "ai-chat-assistant":
-        return <AIChatAssistant navigateTo={navigateTo} />
+      case "ask-rupert":
+        return <AskRupert navigateTo={navigateTo} />
       case "research-portal":
         return <ResearchPortal navigateTo={navigateTo} />
       case "entertainment-hub":
@@ -133,6 +147,18 @@ const App: React.FC = () => {
         return <PillScheduler navigateTo={navigateTo} />
       case "calendar-hub":
         return <CalendarHub navigateTo={navigateTo} />
+      case "mental-health":
+        return <MentalHealth navigateTo={navigateTo} />
+      case "diagnosis-summary":
+        return <DiagnosisSummary navigateTo={navigateTo} />
+      case "treatment-plan":
+        return <TreatmentPlan navigateTo={navigateTo} />
+      case "clinical-trials-by-country":
+        return <ClinicalTrialsByCountry navigateTo={navigateTo} />
+      case "deep-research":
+        return <DeepResearch navigateTo={navigateTo} />
+      case "comedy-hour":
+        return <ComedyHour navigateTo={navigateTo} />
       default:
         return <HomePage navigateTo={navigateTo} />
     }
