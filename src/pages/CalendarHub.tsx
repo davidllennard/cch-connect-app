@@ -3,32 +3,12 @@
 import type React from "react"
 import BackButton from "../components/BackButton"
 import type { PageType } from "../App"
-import { useState } from "react"
 
 interface CalendarHubProps {
   navigateTo: (page: PageType) => void
 }
 
 const CalendarHub: React.FC<CalendarHubProps> = ({ navigateTo }) => {
-  const [eventAlarms, setEventAlarms] = useState<{ [key: string]: boolean }>({
-    oncology: false,
-    lunch: false,
-    medication: false,
-  })
-
-  const toggleEventAlarm = (event: string) => {
-    setEventAlarms({
-      ...eventAlarms,
-      [event]: !eventAlarms[event],
-    })
-
-    if (!eventAlarms[event]) {
-      alert(`Alarm set for ${event} event`)
-    } else {
-      alert(`Alarm turned off for ${event} event`)
-    }
-  }
-
   return (
     <div className="container page-container">
       <div className="page-header">
@@ -78,38 +58,6 @@ const CalendarHub: React.FC<CalendarHubProps> = ({ navigateTo }) => {
                 <h3>Oncology Appointment</h3>
                 <p>10:00 AM - 11:00 AM</p>
                 <p>Dr. Sarah Williams • Memorial Cancer Center</p>
-                <div className="event-alarm" style={{ marginTop: "10px" }}>
-                  <button
-                    className={`alarm-button ${eventAlarms["oncology"] ? "active" : ""}`}
-                    onClick={() => toggleEventAlarm("oncology")}
-                    style={{
-                      background: eventAlarms["oncology"] ? "var(--primary-color)" : "transparent",
-                      border: "1px solid var(--border-color)",
-                      borderRadius: "4px",
-                      padding: "5px 10px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      cursor: "pointer",
-                      color: eventAlarms["oncology"] ? "white" : "var(--text-color)",
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{ width: "16px", height: "16px" }}
-                    >
-                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                    </svg>
-                    {eventAlarms["oncology"] ? "Alarm On" : "Set Alarm"}
-                  </button>
-                </div>
                 <div className="event-actions">
                   <button className="button button-outline">Reschedule</button>
                   <button className="button button-outline">Cancel</button>
@@ -127,38 +75,6 @@ const CalendarHub: React.FC<CalendarHubProps> = ({ navigateTo }) => {
                 <h3>Lunch with Friends</h3>
                 <p>12:30 PM - 2:00 PM</p>
                 <p>Cafe Bella • 123 Main Street</p>
-                <div className="event-alarm" style={{ marginTop: "10px" }}>
-                  <button
-                    className={`alarm-button ${eventAlarms["lunch"] ? "active" : ""}`}
-                    onClick={() => toggleEventAlarm("lunch")}
-                    style={{
-                      background: eventAlarms["lunch"] ? "var(--primary-color)" : "transparent",
-                      border: "1px solid var(--border-color)",
-                      borderRadius: "4px",
-                      padding: "5px 10px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      cursor: "pointer",
-                      color: eventAlarms["lunch"] ? "white" : "var(--text-color)",
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{ width: "16px", height: "16px" }}
-                    >
-                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                    </svg>
-                    {eventAlarms["lunch"] ? "Alarm On" : "Set Alarm"}
-                  </button>
-                </div>
                 <div className="event-actions">
                   <button className="button button-outline">Edit</button>
                   <button className="button button-outline">Delete</button>
@@ -176,38 +92,6 @@ const CalendarHub: React.FC<CalendarHubProps> = ({ navigateTo }) => {
                 <h3>Take Medication</h3>
                 <p>8:00 AM</p>
                 <p>Reminder to take morning medications</p>
-                <div className="event-alarm" style={{ marginTop: "10px" }}>
-                  <button
-                    className={`alarm-button ${eventAlarms["medication"] ? "active" : ""}`}
-                    onClick={() => toggleEventAlarm("medication")}
-                    style={{
-                      background: eventAlarms["medication"] ? "var(--primary-color)" : "transparent",
-                      border: "1px solid var(--border-color)",
-                      borderRadius: "4px",
-                      padding: "5px 10px",
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "5px",
-                      cursor: "pointer",
-                      color: eventAlarms["medication"] ? "white" : "var(--text-color)",
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      style={{ width: "16px", height: "16px" }}
-                    >
-                      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
-                      <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
-                    </svg>
-                    {eventAlarms["medication"] ? "Alarm On" : "Set Alarm"}
-                  </button>
-                </div>
                 <div className="event-actions">
                   <button className="button button-outline">Edit</button>
                   <button className="button button-outline">Delete</button>

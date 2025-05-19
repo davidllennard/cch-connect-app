@@ -31,30 +31,6 @@ const AskRupert: React.FC<AskRupertProps> = ({ navigateTo }) => {
 
       <div className="card">
         <div className="card-header">
-          <h2 className="card-title">Medical Disclaimer</h2>
-        </div>
-        <div className="card-content">
-          <div className="disclaimer">
-            <p>
-              <strong>Important:</strong> Rupert is an AI assistant designed to provide general information and support.
-              The information provided by Rupert is not a substitute for professional medical advice, diagnosis, or
-              treatment.
-            </p>
-            <p>
-              Always seek the advice of your physician or other qualified health provider with any questions you may
-              have regarding a medical condition. Never disregard professional medical advice or delay in seeking it
-              because of information provided by Rupert.
-            </p>
-            <p>
-              In case of a medical emergency, call your doctor or emergency services immediately. Reliance on any
-              information provided by Rupert is solely at your own risk.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-header">
           <h2 className="card-title">Chat with Rupert</h2>
         </div>
         <div className="card-content">
@@ -153,6 +129,30 @@ const AskRupert: React.FC<AskRupertProps> = ({ navigateTo }) => {
               <h3>Emotional Well-being</h3>
               <button className="button button-outline">Ask About This</button>
             </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="card" style={{ marginTop: "20px" }}>
+        <div className="card-header">
+          <h2 className="card-title">Medical Disclaimer</h2>
+        </div>
+        <div className="card-content">
+          <div className="disclaimer" style={{ fontWeight: 300, fontSize: "0.9rem", opacity: 0.8 }}>
+            <p>
+              <strong>Important:</strong> Rupert is an AI assistant designed to provide general information and support.
+              The information provided by Rupert is not a substitute for professional medical advice, diagnosis, or
+              treatment.
+            </p>
+            <p>
+              Always seek the advice of your physician or other qualified health provider with any questions you may
+              have regarding a medical condition. Never disregard professional medical advice or delay in seeking it
+              because of information provided by Rupert.
+            </p>
+            <p>
+              In case of a medical emergency, call your doctor or emergency services immediately. Reliance on any
+              information provided by Rupert is solely at your own risk.
+            </p>
           </div>
         </div>
       </div>

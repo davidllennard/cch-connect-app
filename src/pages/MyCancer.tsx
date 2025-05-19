@@ -161,6 +161,58 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo }) => {
           </div>
         </div>
       </div>
+
+      {/* Additional Services */}
+      <div className="card">
+        <div className="card-header">
+          <h2 className="card-title">Additional Services</h2>
+        </div>
+        <div className="card-content">
+          <div
+            className="services-grid"
+            style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "20px" }}
+          >
+            {/* Medications */}
+            <div className="portal-card" onClick={() => alert("Opening Medications...")} style={{ cursor: "pointer" }}>
+              <div className="portal-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <path d="m12 6 4 6-4 6-4-6 4-6Z"></path>
+                </svg>
+              </div>
+              <h3 className="portal-card-title">Medications</h3>
+              <p className="portal-card-description">View and manage your medications</p>
+            </div>
+
+            {/* Billing */}
+            <div className="portal-card" onClick={() => alert("Opening Billing...")} style={{ cursor: "pointer" }}>
+              <div className="portal-card-icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect>
+                  <line x1="1" y1="10" x2="23" y2="10"></line>
+                </svg>
+              </div>
+              <h3 className="portal-card-title">Billing</h3>
+              <p className="portal-card-description">View and pay medical bills</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }

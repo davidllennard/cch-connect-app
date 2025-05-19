@@ -20,16 +20,10 @@ import EntertainmentHub from "./pages/EntertainmentHub"
 import MedicalProfile from "./pages/MedicalProfile"
 import PillScheduler from "./pages/PillScheduler"
 import CalendarHub from "./pages/CalendarHub"
-import "./styles/index.css"
-
-// Update the imports to include all new pages
+import Profile from "./pages/Profile"
+import PuzzlesAndGames from "./pages/PuzzlesAndGames"
 import AskRupert from "./pages/AskRupert"
-import MentalHealth from "./pages/MentalHealth"
-import DiagnosisSummary from "./pages/DiagnosisSummary"
-import TreatmentPlan from "./pages/TreatmentPlan"
-import ClinicalTrialsByCountry from "./pages/ClinicalTrialsByCountry"
-import DeepResearch from "./pages/DeepResearch"
-import ComedyHour from "./pages/ComedyHour"
+import "./styles/index.css"
 
 // Define page types for type safety
 export type PageType =
@@ -44,22 +38,25 @@ export type PageType =
   | "lab-reports"
   | "symptom-tracker"
   | "group-chat"
+  | "ai-chat-assistant"
   | "ask-rupert"
   | "research-portal"
   | "entertainment-hub"
   | "medical-profile"
   | "pill-scheduler"
   | "calendar-hub"
-  | "mental-health"
+  | "profile"
+  | "puzzles-and-games"
   | "diagnosis-summary"
   | "treatment-plan"
-  | "clinical-trials-by-country"
-  | "deep-research"
-  | "comedy-hour"
+  | "mental-health"
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<PageType>("home")
   const [darkMode, setDarkMode] = useState<boolean>(false)
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(false)
+  const [password, setPassword] = useState<string>("")
+  const [showPasswordModal, setShowPasswordModal] = useState<boolean>(true)
 
   useEffect(() => {
     // Check for saved theme preference or use device preference
@@ -110,7 +107,23 @@ const App: React.FC = () => {
     window.scrollTo(0, 0)
   }
 
-  // Update the renderCurrentPage function to include all new routes
+  const validatePassword = () => {
+    if (password === "1234") {
+      setIsAuthenticated(true)
+      setShowPasswordModal(false)
+    } else {
+      alert("Incorrect password. Please try again.")
+    }
+  }
+
+  // Add a function to handle iframe content for inactive buttons
+  const handleInactiveButton = () => {
+    // This would be implemented in a real application
+    // For now, we'll just show an alert
+    alert("This feature is not functional yet. Please try again later.")
+  }
+
+  // Render the current page based on state
   const renderCurrentPage = () => {
     switch (currentPage) {
       case "home":
@@ -135,7 +148,7 @@ const App: React.FC = () => {
         return <SymptomTracker navigateTo={navigateTo} />
       case "group-chat":
         return <GroupChat navigateTo={navigateTo} />
-      case "ask-rupert":
+      case "ai-chat-assistant":
         return <AskRupert navigateTo={navigateTo} />
       case "research-portal":
         return <ResearchPortal navigateTo={navigateTo} />
@@ -147,18 +160,12 @@ const App: React.FC = () => {
         return <PillScheduler navigateTo={navigateTo} />
       case "calendar-hub":
         return <CalendarHub navigateTo={navigateTo} />
-      case "mental-health":
-        return <MentalHealth navigateTo={navigateTo} />
-      case "diagnosis-summary":
-        return <DiagnosisSummary navigateTo={navigateTo} />
-      case "treatment-plan":
-        return <TreatmentPlan navigateTo={navigateTo} />
-      case "clinical-trials-by-country":
-        return <ClinicalTrialsByCountry navigateTo={navigateTo} />
-      case "deep-research":
-        return <DeepResearch navigateTo={navigateTo} />
-      case "comedy-hour":
-        return <ComedyHour navigateTo={navigateTo} />
+      case "profile":
+        return <Profile navigateTo={navigateTo} />
+      case "puzzles-and-games":
+        return <PuzzlesAndGames navigateTo={navigateTo} />
+      case "ask-rupert":
+        return <AskRupert navigateTo={navigateTo} />
       default:
         return <HomePage navigateTo={navigateTo} />
     }
@@ -166,9 +173,29 @@ const App: React.FC = () => {
 
   return (
     <div className="app-container">
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} navigateTo={navigateTo} />
-      <main className="main-content">{renderCurrentPage()}</main>
-      <FooterNav currentPage={currentPage} navigateTo={navigateTo} />
+      {showPasswordModal && !isAuthenticated ? (
+        <div className="password-modal">
+          <div className="password-modal-content">
+            <h2>Cancer Care Hub</h2>
+            <p>Please enter your password to continue</p>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter password"
+            />
+            <button className="button button-primary" onClick={validatePassword}>
+              Login
+            </button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} navigateTo={navigateTo} />
+          <main className="main-content">{renderCurrentPage()}</main>
+          <FooterNav currentPage={currentPage} navigateTo={navigateTo} />
+        </>
+      )}
     </div>
   )
 }

@@ -45,19 +45,19 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
         <PortalCard
           title="YouTube"
           description="Watch videos and tutorials"
-          onClick={() => alert("Opening YouTube...")}
+          onClick={() => window.open("https://www.youtube.com", "_blank")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
               fill="none"
-              stroke="currentColor"
+              stroke="#FF0000"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
             >
               <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+              <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="#FF0000"></polygon>
             </svg>
           }
         />
@@ -66,25 +66,16 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
         <PortalCard
           title="Netflix"
           description="Watch movies and TV shows"
-          onClick={() => alert("Opening Netflix...")}
+          onClick={() => window.open("https://www.netflix.com", "_blank")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              fill="#E50914"
+              stroke="#E50914"
+              strokeWidth="0.2"
             >
-              <rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"></rect>
-              <line x1="7" y1="2" x2="7" y2="22"></line>
-              <line x1="17" y1="2" x2="17" y2="22"></line>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <line x1="2" y1="7" x2="7" y2="7"></line>
-              <line x1="2" y1="17" x2="7" y2="17"></line>
-              <line x1="17" y1="17" x2="22" y2="17"></line>
-              <line x1="17" y1="7" x2="22" y2="7"></line>
+              <path d="M5 2v20l7-15v15l7-20z" />
             </svg>
           }
         />
@@ -93,21 +84,16 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
         <PortalCard
           title="Spotify"
           description="Listen to music and podcasts"
-          onClick={() => alert("Opening Spotify...")}
+          onClick={() => window.open("https://www.spotify.com", "_blank")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+              fill="#1DB954"
+              stroke="#1DB954"
+              strokeWidth="0.2"
             >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 14.5a4 4 0 0 1 8 0"></path>
-              <path d="M6 10.5a8 8 0 0 1 12 0"></path>
-              <path d="M16 8a11.28 11.28 0 0 0-8 0"></path>
+              <path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm4.5 14.5c-.2.3-.6.4-1 .2-2.8-1.7-6.3-2-10.4-1.2-.4.1-.8-.2-.9-.6-.1-.4.2-.8.6-.9 4.5-1 8.4-.6 11.5 1.4.4.3.5.7.2 1.1zm1.2-2.7c-.3.4-.8.5-1.2.3-3.2-2-8.1-2.6-11.9-1.4-.5.1-1-.1-1.2-.6-.1-.5.1-1 .6-1.2 4.4-1.3 9.8-.7 13.5 1.7.5.2.6.7.2 1.2zm.1-2.8c-3.8-2.3-10.1-2.5-13.8-1.4-.6.1-1.2-.2-1.3-.8-.1-.6.2-1.2.8-1.3 4.2-1.3 11.1-1 15.5 1.6.6.3.8 1.1.4 1.6-.2.4-1 .7-1.6.3z" />
             </svg>
           }
         />
@@ -160,7 +146,7 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
         <PortalCard
           title="Guided Meditation"
           description="Relax and reduce stress"
-          onClick={() => alert("Opening Guided Meditation...")}
+          onClick={() => window.open("https://youtu.be/o8vsZQW0BbU?si=EBaBcTdalpfqum7u", "_blank")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -181,7 +167,7 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
         <PortalCard
           title="Nature Therapy"
           description="Immerse yourself in calming natural environments"
-          onClick={() => alert("Opening Nature Therapy...")}
+          onClick={() => window.open("https://youtu.be/SHIXRwjjscY?si=Z6v9GDfjnavubEh6", "_blank")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -199,9 +185,9 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
 
         {/* Podcasts */}
         <PortalCard
-          title="Podcasts"
-          description="Listen to your favorite shows"
-          onClick={() => alert("Opening Podcasts...")}
+          title="Today's Puzzles and Games"
+          description="Challenge your mind with puzzles and games"
+          onClick={() => navigateTo("puzzles-and-games")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -212,32 +198,9 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo }) => {
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
-              <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-              <line x1="12" y1="19" x2="12" y2="23"></line>
-              <line x1="8" y1="23" x2="16" y2="23"></line>
-            </svg>
-          }
-        />
-        {/* Comedy Hour */}
-        <PortalCard
-          title="Comedy Hour"
-          description="Laugh and enjoy comedy content"
-          onClick={() => navigateTo("comedy-hour")}
-          icon={
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-              <line x1="9" y1="9" x2="9.01" y2="9"></line>
-              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
             </svg>
           }
         />

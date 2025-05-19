@@ -9,23 +9,6 @@ interface ResearchPortalProps {
   navigateTo: (page: PageType) => void
 }
 
-interface PortalCardProps {
-  title: string
-  description: string
-  onClick: () => void
-  icon: React.ReactNode
-}
-
-const PortalCard: React.FC<PortalCardProps> = ({ title, description, onClick, icon }) => {
-  return (
-    <div className="portal-card" onClick={onClick}>
-      <div className="portal-icon">{icon}</div>
-      <h3>{title}</h3>
-      <p>{description}</p>
-    </div>
-  )
-}
-
 const ResearchPortal: React.FC<ResearchPortalProps> = ({ navigateTo }) => {
   return (
     <div className="container page-container">
@@ -133,55 +116,6 @@ const ResearchPortal: React.FC<ResearchPortalProps> = ({ navigateTo }) => {
               </div>
               <button className="button button-outline">Read Article</button>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="card">
-        <div className="card-header">
-          <h2 className="card-title">Research Resources</h2>
-        </div>
-        <div className="card-content">
-          <div className="portal-grid" style={{ marginBottom: "20px" }}>
-            <PortalCard
-              title="Clinical Trials By Country"
-              description="Find trials in your region"
-              onClick={() => navigateTo("clinical-trials-by-country")}
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-                </svg>
-              }
-            />
-
-            <PortalCard
-              title="Deep Research"
-              description="Advanced scientific resources"
-              onClick={() => navigateTo("deep-research")}
-              icon={
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
-                </svg>
-              }
-            />
           </div>
         </div>
       </div>
