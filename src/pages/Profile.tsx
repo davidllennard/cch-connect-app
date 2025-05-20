@@ -393,10 +393,7 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
 
             <div className="form-group">
               <label>Hobbies and Areas of Interest</label>
-              <div
-                className="hobby-grid"
-                style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(150px, 1fr))", gap: "10px" }}
-              >
+              <div className="hobby-grid">
                 {hobbyOptions.map((hobby) => (
                   <label key={hobby} className="hobby-item">
                     <input
@@ -449,8 +446,8 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
             </div>
 
             {formData.makeArt === "yes" && (
-              <div className="form-group">
-                <label htmlFor="artGenre">Genre</label>
+              <div className="form-group art-genres-container">
+                <label htmlFor="artGenre">What type of art do you create?</label>
                 <select id="artGenre" name="artGenre" value={formData.artGenre} onChange={handleInputChange}>
                   <option value="">Select a genre</option>
                   {artGenreOptions.map((genre) => (

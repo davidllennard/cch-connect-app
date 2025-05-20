@@ -71,7 +71,7 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleI
         <PortalCard
           title="Your Music Library"
           description="On your device"
-          onClick={() => navigateTo("music-library")}
+          onClick={() => alert("Opening Music Library...")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleI
         <PortalCard
           title="Photos and Videos"
           description="On your device"
-          onClick={() => navigateTo("photos-and-videos")}
+          onClick={() => alert("Opening Photos and Videos...")}
           icon={
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -111,7 +111,7 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleI
           }
         />
 
-        {/* Comedy Hour */}
+        {/* Nature Therapy */}
         <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
           <div className="portal-card-icon">
             <svg
@@ -123,17 +123,34 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleI
               strokeLinecap="round"
               strokeLinejoin="round"
             >
-              <circle cx="12" cy="12" r="10"></circle>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-              <line x1="9" y1="9" x2="9.01" y2="9"></line>
-              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+              <path d="M21 12a9 9 0 0 1-9 9m9-9a9 9 0 0 0-9-9m9 9H3m9 9a9 9 0 0 1-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"></path>
             </svg>
           </div>
-          <h3 className="portal-card-title">Comedy Hour</h3>
-          <p className="portal-card-description">Laugh with comedy specials and shows</p>
+          <h3 className="portal-card-title">Nature Therapy</h3>
+          <p className="portal-card-description">Relax with nature sounds and scenes</p>
         </div>
 
-        {/* Puzzles and Games */}
+        {/* Guided Meditation */}
+        <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+          <div className="portal-card-icon">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </div>
+          <h3 className="portal-card-title">Guided Meditation</h3>
+          <p className="portal-card-description">Follow guided meditation sessions</p>
+        </div>
+
+        {/* Podcasts */}
         <PortalCard
           title="Today's Puzzles and Games"
           description="Challenge your mind with puzzles and games"
