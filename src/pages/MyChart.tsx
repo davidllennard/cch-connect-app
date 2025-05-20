@@ -8,13 +8,14 @@ import "../styles/PageTemplate.css"
 
 interface MyChartProps {
   navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
-const MyChart: React.FC<MyChartProps> = ({ navigateTo }) => {
+const MyChart: React.FC<MyChartProps> = ({ navigateTo, handleInactiveButton }) => {
   return (
     <div className="container page-container">
       <div className="page-header">
-        <BackButton onClick={() => navigateTo("home")} />
+        <BackButton onClick={() => navigateTo("my-cancer")} />
         <h1>MyChart</h1>
       </div>
       <p className="page-description">Access your medical records and health information</p>

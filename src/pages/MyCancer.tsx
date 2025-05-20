@@ -174,7 +174,7 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo, handleInactiveButton })
             style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(250px, 1fr))", gap: "20px" }}
           >
             {/* Medications */}
-            <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+            <div className="portal-card" onClick={() => navigateTo("medications")} style={{ cursor: "pointer" }}>
               <div className="portal-card-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +193,7 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo, handleInactiveButton })
             </div>
 
             {/* Billing */}
-            <div className="portal-card" onClick={handleInactiveButton} style={{ cursor: "pointer" }}>
+            <div className="portal-card" onClick={() => navigateTo("billing")} style={{ cursor: "pointer" }}>
               <div className="portal-card-icon">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
