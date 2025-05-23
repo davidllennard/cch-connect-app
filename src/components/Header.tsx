@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import ThemeToggle from "./ThemeToggle"
-import type { PageType } from "../App"
+import type React from "react";
+import ThemeToggle from "./ThemeToggle";
+import type { PageType } from "../pages/_app";
 
 interface HeaderProps {
-  darkMode: boolean
-  toggleDarkMode: () => void
-  navigateTo: (page: PageType) => void
+  darkMode: boolean;
+  toggleDarkMode: () => void;
+  navigateTo: (page: PageType) => void;
 }
 
 const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, navigateTo }) => {
@@ -23,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({ darkMode, toggleDarkMode, navigateTo })
         <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
       </div>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

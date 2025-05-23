@@ -1,12 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
-import "../styles/PageTemplate.css"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface ResearchPortalProps {
-  navigateTo: (page: PageType) => void
+  navigateTo: (page: PageType) => void;
 }
 
 const ResearchPortal: React.FC<ResearchPortalProps> = ({ navigateTo }) => {
@@ -120,7 +119,7 @@ const ResearchPortal: React.FC<ResearchPortalProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ResearchPortal
+export default ResearchPortal;

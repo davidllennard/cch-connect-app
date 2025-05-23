@@ -1,4 +1,4 @@
-import { PageType } from "../App";
+import { PageType } from "../pages/_app";
 
 export interface PortalCardData {
   title: string;

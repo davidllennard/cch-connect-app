@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
-import "../styles/PageTemplate.css"
+import type React from "react";
+import { useState } from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface GroupChatProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 // Top 100 cancer types for dropdown
@@ -120,34 +119,34 @@ const cancerTypes = [
   "Malignant Fibrous Histiocytoma",
   "Mycosis Fungoides",
   "Myxofibrosarcoma",
-]
+];
 
 const GroupChat: React.FC<GroupChatProps> = ({ navigateTo, handleInactiveButton }) => {
-  const [message, setMessage] = useState("")
-  const [searchTerm, setSearchTerm] = useState("")
-  const [showDropdown, setShowDropdown] = useState(false)
+  const [message, setMessage] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showDropdown, setShowDropdown] = useState(false);
 
   const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (message.trim()) {
-      alert(`Message sent: ${message}`)
-      setMessage("")
+      alert(`Message sent: ${message}`);
+      setMessage("");
     }
-  }
+  };
 
-  const filteredCancerTypes = cancerTypes.filter((cancer) => cancer.toLowerCase().includes(searchTerm.toLowerCase()))
+  const filteredCancerTypes = cancerTypes.filter((cancer) => cancer.toLowerCase().includes(searchTerm.toLowerCase()));
 
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value)
-    setShowDropdown(true)
-  }
+    setSearchTerm(e.target.value);
+    setShowDropdown(true);
+  };
 
   const selectCancerType = (cancer: string) => {
-    setSearchTerm(cancer)
-    setShowDropdown(false)
+    setSearchTerm(cancer);
+    setShowDropdown(false);
     // In a real app, this would trigger a search for groups related to this cancer type
-    alert(`Searching for groups related to ${cancer}...`)
-  }
+    alert(`Searching for groups related to ${cancer}...`);
+  };
 
   return (
     <div className="container page-container">
@@ -341,7 +340,7 @@ const GroupChat: React.FC<GroupChatProps> = ({ navigateTo, handleInactiveButton 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default GroupChat
+export default GroupChat;

@@ -1,19 +1,19 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
+import type React from "react";
+import { useState } from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface MoodTrackerProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const MoodTracker: React.FC<MoodTrackerProps> = ({ navigateTo, handleInactiveButton }) => {
-  const [selectedMood, setSelectedMood] = useState<string | null>(null)
-  const [moodIntensity, setMoodIntensity] = useState<number>(5)
-  const [moodNote, setMoodNote] = useState<string>("")
+  const [selectedMood, setSelectedMood] = useState<string | null>(null);
+  const [moodIntensity, setMoodIntensity] = useState<number>(5);
+  const [moodNote, setMoodNote] = useState<string>("");
 
   const moods = [
     { name: "Happy", emoji: "😊" },
@@ -24,7 +24,7 @@ const MoodTracker: React.FC<MoodTrackerProps> = ({ navigateTo, handleInactiveBut
     { name: "Tired", emoji: "😴" },
     { name: "Hopeful", emoji: "🙂" },
     { name: "Frustrated", emoji: "😤" },
-  ]
+  ];
 
   // Sample mood data for the chart
   const moodData = [
@@ -42,15 +42,15 @@ const MoodTracker: React.FC<MoodTrackerProps> = ({ navigateTo, handleInactiveBut
     { date: "May 12", mood: "Happy", intensity: 7 },
     { date: "May 13", mood: "Calm", intensity: 8 },
     { date: "May 14", mood: "Tired", intensity: 5 },
-  ]
+  ];
 
   const handleMoodSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    alert(`Mood logged: ${selectedMood} with intensity ${moodIntensity}`)
-    setSelectedMood(null)
-    setMoodIntensity(5)
-    setMoodNote("")
-  }
+    e.preventDefault();
+    alert(`Mood logged: ${selectedMood} with intensity ${moodIntensity}`);
+    setSelectedMood(null);
+    setMoodIntensity(5);
+    setMoodNote("");
+  };
 
   return (
     <div className="container page-container">
@@ -231,7 +231,7 @@ const MoodTracker: React.FC<MoodTrackerProps> = ({ navigateTo, handleInactiveBut
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MoodTracker
+export default MoodTracker;

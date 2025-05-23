@@ -1,20 +1,20 @@
-"use client"
+"use client";
 
-import type React from "react"
-import "../styles/AppointmentCard.css"
+import type React from "react";
+// import "../styles/AppointmentCard.css"
 
 interface AppointmentCardProps {
-  date: string
-  month: string
-  year: string
-  title: string
-  doctor: string
-  location: string
-  time: string
-  onReschedule?: () => void
-  onCancel?: () => void
-  onJoin?: () => void
-  isVirtual?: boolean
+  date: string;
+  month: string;
+  year: string;
+  title: string;
+  doctor: string;
+  location: string;
+  time: string;
+  onReschedule?: () => void;
+  onCancel?: () => void;
+  onJoin?: () => void;
+  isVirtual?: boolean;
 }
 
 const AppointmentCard: React.FC<AppointmentCardProps> = ({
@@ -62,7 +62,7 @@ const AppointmentCard: React.FC<AppointmentCardProps> = ({
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AppointmentCard
+export default AppointmentCard;

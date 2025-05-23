@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface DiagnosisSummaryProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -105,7 +105,7 @@ const DiagnosisSummary: React.FC<DiagnosisSummaryProps> = ({ navigateTo, handleI
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default DiagnosisSummary
+export default DiagnosisSummary;

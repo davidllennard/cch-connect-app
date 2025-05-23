@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface PuzzlesAndGamesProps {
-  navigateTo: (page: PageType) => void
+  navigateTo: (page: PageType) => void;
 }
 
 const PuzzlesAndGames: React.FC<PuzzlesAndGamesProps> = ({ navigateTo }) => {
@@ -108,7 +108,7 @@ const PuzzlesAndGames: React.FC<PuzzlesAndGamesProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default PuzzlesAndGames
+export default PuzzlesAndGames;

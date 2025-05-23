@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../../components/BackButton";
+import "../../styles/index.css";
 
 interface MyCancerProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: any) => void;
+  handleInactiveButton?: () => void;
 }
 
 const MyCancer: React.FC<MyCancerProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -14,7 +14,7 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo, handleInactiveButton })
     <div className="container page-container">
       <div className="page-header">
         <BackButton onClick={() => navigateTo("home")} />
-        <h1>My Cancer</h1>
+        <h1>My ssCancer</h1>
       </div>
 
       {/* Care Team Navigation Cards */}
@@ -215,7 +215,7 @@ const MyCancer: React.FC<MyCancerProps> = ({ navigateTo, handleInactiveButton })
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MyCancer
+export default MyCancer;

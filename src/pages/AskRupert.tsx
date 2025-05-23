@@ -1,26 +1,25 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
-import "../styles/PageTemplate.css"
+import type React from "react";
+import { useState } from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface AskRupertProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const AskRupert: React.FC<AskRupertProps> = ({ navigateTo, handleInactiveButton }) => {
-  const [message, setMessage] = useState("")
+  const [message, setMessage] = useState("");
 
   const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
     if (message.trim()) {
-      alert(`Question sent to Rupert: ${message}`)
-      setMessage("")
+      alert(`Question sent to Rupert: ${message}`);
+      setMessage("");
     }
-  }
+  };
 
   return (
     <div className="container page-container">
@@ -166,7 +165,7 @@ const AskRupert: React.FC<AskRupertProps> = ({ navigateTo, handleInactiveButton 
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AskRupert
+export default AskRupert;

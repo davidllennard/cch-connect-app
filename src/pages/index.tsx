@@ -3,7 +3,7 @@
 import type React from "react";
 import PortalCard from "../components/PortalCard";
 import LanguageSelector from "../components/LanguageSelector";
-import type { PageType } from "../App";
+import type { PageType } from "./_app";
 import { portalCards } from "../data/home";
 
 interface HomePageProps {
@@ -13,6 +13,7 @@ interface HomePageProps {
 
 const HomePage: React.FC<HomePageProps> = ({ navigateTo, handleInactiveButton }) => {
   const handleCardClick = (page: PageType) => {
+    console.log(page);
     navigateTo(page);
   };
 
