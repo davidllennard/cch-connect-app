@@ -2,8 +2,8 @@
 
 import type React from "react";
 import { useState } from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import BackButton from "../../components/BackButton";
+import type { PageType } from "../_app";
 
 interface GroupChatProps {
   navigateTo: (page: PageType) => void;

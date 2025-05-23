@@ -1,9 +1,9 @@
 "use client";
 
 import type React from "react";
-import BackButton from "../components/BackButton";
-import PortalCard from "../components/PortalCard";
-import type { PageType } from "./_app";
+import BackButton from "../../components/BackButton";
+import PortalCard from "../../components/PortalCard";
+import type { PageType } from "../_app";
 
 interface MentalHealthProps {
   navigateTo: (page: PageType) => void;

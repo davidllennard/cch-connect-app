@@ -1,8 +1,8 @@
 "use client";
 
 import type React from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import BackButton from "../../components/BackButton";
+import type { PageType } from "../_app";
 
 interface CalendarHubProps {
   navigateTo: (page: PageType) => void;
