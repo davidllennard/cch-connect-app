@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import PortalCard from "../components/PortalCard"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../../components/BackButton";
+import PortalCard from "../../components/PortalCard";
+import type { PageType } from "../_app";
 
 interface EntertainmentHubProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -173,7 +173,7 @@ const EntertainmentHub: React.FC<EntertainmentHubProps> = ({ navigateTo, handleI
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default EntertainmentHub
+export default EntertainmentHub;

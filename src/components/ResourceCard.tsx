@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
-import "../styles/ResourceCard.css"
+import type React from "react";
+// import "../styles/ResourceCard.css"
 
 interface ResourceCardProps {
-  title: string
-  description: string
-  onView: () => void
+  title: string;
+  description: string;
+  onView: () => void;
 }
 
 const ResourceCard: React.FC<ResourceCardProps> = ({ title, description, onView }) => {
@@ -18,7 +18,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({ title, description, onView 
         Learn More
       </button>
     </div>
-  )
-}
+  );
+};
 
-export default ResourceCard
+export default ResourceCard;

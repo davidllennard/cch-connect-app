@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import ResourceCard from "../components/ResourceCard"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import ResourceCard from "../components/ResourceCard";
+import type { PageType } from "./_app";
 // Remove any import for "../styles/PageTemplate.css" if it exists
 
 interface CaregiversProps {
-  navigateTo: (page: PageType) => void
+  navigateTo: (page: PageType) => void;
 }
 
 const Caregivers: React.FC<CaregiversProps> = ({ navigateTo }) => {
@@ -123,7 +123,7 @@ const Caregivers: React.FC<CaregiversProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Caregivers
+export default Caregivers;

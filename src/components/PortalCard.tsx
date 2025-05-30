@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import type { ReactNode } from "react"
+import type React from "react";
+import type { ReactNode } from "react";
 
 interface PortalCardProps {
-  title: string
-  description: string
-  icon: ReactNode
-  onClick: () => void
+  title: string;
+  description: string;
+  icon: ReactNode;
+  onClick: () => void;
 }
 
 const PortalCard: React.FC<PortalCardProps> = ({ title, description, icon, onClick }) => {
@@ -17,7 +17,7 @@ const PortalCard: React.FC<PortalCardProps> = ({ title, description, icon, onCli
       <h3 className="portal-card-title">{title}</h3>
       <p className="portal-card-description">{description}</p>
     </div>
-  )
-}
+  );
+};
 
-export default PortalCard
+export default PortalCard;

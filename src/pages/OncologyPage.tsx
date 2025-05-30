@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import TeamMemberCard from "../components/TeamMemberCard"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import TeamMemberCard from "../components/TeamMemberCard";
+import type { PageType } from "./_app";
 
 interface OncologyPageProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const OncologyPage: React.FC<OncologyPageProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -98,7 +98,7 @@ const OncologyPage: React.FC<OncologyPageProps> = ({ navigateTo, handleInactiveB
         />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default OncologyPage
+export default OncologyPage;

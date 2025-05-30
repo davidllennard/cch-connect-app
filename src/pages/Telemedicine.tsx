@@ -1,14 +1,14 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import AppointmentCard from "../components/AppointmentCard"
-import TeamMemberCard from "../components/TeamMemberCard"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import AppointmentCard from "../components/AppointmentCard";
+import TeamMemberCard from "../components/TeamMemberCard";
+import type { PageType } from "./_app";
 // import "../styles/PageTemplate.css"
 
 interface TelemedicineProps {
-  navigateTo: (page: PageType) => void
+  navigateTo: (page: PageType) => void;
 }
 
 const Telemedicine: React.FC<TelemedicineProps> = ({ navigateTo }) => {
@@ -103,7 +103,7 @@ const Telemedicine: React.FC<TelemedicineProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Telemedicine
+export default Telemedicine;

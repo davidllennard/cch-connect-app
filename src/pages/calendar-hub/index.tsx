@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../../components/BackButton";
+import type { PageType } from "../_app";
 
 interface CalendarHubProps {
-  navigateTo: (page: PageType) => void
+  navigateTo: (page: PageType) => void;
 }
 
 const CalendarHub: React.FC<CalendarHubProps> = ({ navigateTo }) => {
@@ -102,7 +102,7 @@ const CalendarHub: React.FC<CalendarHubProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default CalendarHub
+export default CalendarHub;

@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import type { PageType } from "../App"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import type { PageType } from "./_app";
 
 interface TreatmentPlanProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const TreatmentPlan: React.FC<TreatmentPlanProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -136,7 +136,7 @@ const TreatmentPlan: React.FC<TreatmentPlanProps> = ({ navigateTo, handleInactiv
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default TreatmentPlan
+export default TreatmentPlan;

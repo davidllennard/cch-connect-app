@@ -1,14 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
-import BackButton from "../components/BackButton"
-import FeatureTile from "../components/FeatureTile"
-import type { PageType } from "../App"
-import "../styles/PageTemplate.css"
+import type React from "react";
+import BackButton from "../components/BackButton";
+import FeatureTile from "../components/FeatureTile";
+import type { PageType } from "./_app";
 
 interface MyChartProps {
-  navigateTo: (page: PageType) => void
-  handleInactiveButton?: () => void
+  navigateTo: (page: PageType) => void;
+  handleInactiveButton?: () => void;
 }
 
 const MyChart: React.FC<MyChartProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -239,7 +238,7 @@ const MyChart: React.FC<MyChartProps> = ({ navigateTo, handleInactiveButton }) =
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default MyChart
+export default MyChart;
