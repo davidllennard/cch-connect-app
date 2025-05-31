@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import type React from "react";
+import type React from "react"
 
 interface BackButtonProps {
-  onClick: () => void;
+  onClick: () => void
 }
 
 const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
@@ -22,7 +22,7 @@ const BackButton: React.FC<BackButtonProps> = ({ onClick }) => {
         <polyline points="12 19 5 12 12 5"></polyline>
       </svg>
     </div>
-  );
-};
+  )
+}
 
-export default BackButton;
+export default BackButton

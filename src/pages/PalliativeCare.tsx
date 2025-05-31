@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../components/BackButton";
-import TeamMemberCard from "../components/TeamMemberCard";
-import ServiceCard from "../components/ServiceCard";
-import ResourceCard from "../components/ResourceCard";
-import type { PageType } from "./_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import TeamMemberCard from "../components/TeamMemberCard"
+import ServiceCard from "../components/ServiceCard"
+import ResourceCard from "../components/ResourceCard"
+import type { PageType } from "../App"
 
 interface PalliativeCareProps {
-  navigateTo: (page: PageType) => void;
-  handleInactiveButton?: () => void;
+  navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
 const PalliativeCare: React.FC<PalliativeCareProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -247,7 +247,7 @@ const PalliativeCare: React.FC<PalliativeCareProps> = ({ navigateTo, handleInact
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PalliativeCare;
+export default PalliativeCare

@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../components/BackButton";
-import TeamMemberCard from "../components/TeamMemberCard";
-import ServiceCard from "../components/ServiceCard";
-import type { PageType } from "./_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import TeamMemberCard from "../components/TeamMemberCard"
+import ServiceCard from "../components/ServiceCard"
+import type { PageType } from "../App"
 
 interface NurseNavigationProps {
-  navigateTo: (page: PageType) => void;
-  handleInactiveButton?: () => void;
+  navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
 const NurseNavigation: React.FC<NurseNavigationProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -164,7 +164,7 @@ const NurseNavigation: React.FC<NurseNavigationProps> = ({ navigateTo, handleIna
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default NurseNavigation;
+export default NurseNavigation

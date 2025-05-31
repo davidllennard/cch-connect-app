@@ -1,11 +1,11 @@
-import type React from "react";
-import type { ReactNode } from "react";
-// import "../styles/ServiceCard.css"
+import type React from "react"
+import type { ReactNode } from "react"
+import "../styles/ServiceCard.css"
 
 interface ServiceCardProps {
-  title: string;
-  description: string;
-  icon: ReactNode;
+  title: string
+  description: string
+  icon: ReactNode
 }
 
 const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) => {
@@ -17,7 +17,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ title, description, icon }) =
         <p>{description}</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default ServiceCard;
+export default ServiceCard

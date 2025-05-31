@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
 
 interface SupportGroupsProps {
-  navigateTo: (page: PageType) => void;
-  handleInactiveButton?: () => void;
+  navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
 const SupportGroups: React.FC<SupportGroupsProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -232,7 +232,7 @@ const SupportGroups: React.FC<SupportGroupsProps> = ({ navigateTo, handleInactiv
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default SupportGroups;
+export default SupportGroups

@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
 // Remove any import for "../styles/PageTemplate.css" if it exists
 
 interface LabReportsProps {
-  navigateTo: (page: PageType) => void;
+  navigateTo: (page: PageType) => void
 }
 
 const LabReports: React.FC<LabReportsProps> = ({ navigateTo }) => {
@@ -131,7 +131,7 @@ const LabReports: React.FC<LabReportsProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default LabReports;
+export default LabReports

@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
 
 interface BillingProps {
-  navigateTo: (page: PageType) => void;
-  handleInactiveButton?: () => void;
+  navigateTo: (page: PageType) => void
+  handleInactiveButton?: () => void
 }
 
 const Billing: React.FC<BillingProps> = ({ navigateTo, handleInactiveButton }) => {
@@ -287,7 +287,7 @@ const Billing: React.FC<BillingProps> = ({ navigateTo, handleInactiveButton }) =
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Billing;
+export default Billing

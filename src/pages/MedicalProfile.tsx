@@ -1,11 +1,11 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
 
 interface MedicalProfileProps {
-  navigateTo: (page: PageType) => void;
+  navigateTo: (page: PageType) => void
 }
 
 const MedicalProfile: React.FC<MedicalProfileProps> = ({ navigateTo }) => {
@@ -156,7 +156,7 @@ const MedicalProfile: React.FC<MedicalProfileProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MedicalProfile;
+export default MedicalProfile

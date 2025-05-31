@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type React from "react";
-import type { PageType } from "../pages/_app";
-import SOSButton from "./SOSButton";
+import type React from "react"
+import type { PageType } from "../App"
+import SOSButton from "./SOSButton"
 
 interface FooterNavProps {
-  currentPage: PageType;
-  navigateTo: (page: PageType) => void;
+  currentPage: PageType
+  navigateTo: (page: PageType) => void
 }
 
 const FooterNav: React.FC<FooterNavProps> = ({ currentPage, navigateTo }) => {
@@ -55,7 +55,7 @@ const FooterNav: React.FC<FooterNavProps> = ({ currentPage, navigateTo }) => {
         <span>Symptoms</span>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default FooterNav;
+export default FooterNav

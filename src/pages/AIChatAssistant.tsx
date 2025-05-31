@@ -1,24 +1,25 @@
-"use client";
+"use client"
 
-import type React from "react";
-import { useState } from "react";
-import BackButton from "../components/BackButton";
-import type { PageType } from "./_app";
+import type React from "react"
+import { useState } from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
+import "../styles/PageTemplate.css"
 
 interface AIChatAssistantProps {
-  navigateTo: (page: PageType) => void;
+  navigateTo: (page: PageType) => void
 }
 
 const AIChatAssistant: React.FC<AIChatAssistantProps> = ({ navigateTo }) => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState("")
 
   const handleSendMessage = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     if (message.trim()) {
-      alert(`Question sent to AI: ${message}`);
-      setMessage("");
+      alert(`Question sent to AI: ${message}`)
+      setMessage("")
     }
-  };
+  }
 
   return (
     <div className="container page-container">
@@ -132,7 +133,7 @@ const AIChatAssistant: React.FC<AIChatAssistantProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AIChatAssistant;
+export default AIChatAssistant

@@ -1,15 +1,15 @@
-"use client";
+"use client"
 
-import type React from "react";
-// import "../styles/TeamMemberCard.css"
+import type React from "react"
+import "../styles/TeamMemberCard.css"
 
 interface TeamMemberCardProps {
-  name: string;
-  role: string;
-  description?: string;
-  onContact?: () => void;
-  onSchedule?: () => void;
-  isLarge?: boolean;
+  name: string
+  role: string
+  description?: string
+  onContact?: () => void
+  onSchedule?: () => void
+  isLarge?: boolean
 }
 
 const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
@@ -54,7 +54,7 @@ const TeamMemberCard: React.FC<TeamMemberCardProps> = ({
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default TeamMemberCard;
+export default TeamMemberCard

@@ -1,14 +1,14 @@
-"use client";
+"use client"
 
-import type React from "react";
-import type { ReactNode } from "react";
-// import "../styles/FeatureTile.css"
+import type React from "react"
+import type { ReactNode } from "react"
+import "../styles/FeatureTile.css"
 
 interface FeatureTileProps {
-  title: string;
-  description: string;
-  icon: ReactNode;
-  onClick: () => void;
+  title: string
+  description: string
+  icon: ReactNode
+  onClick: () => void
 }
 
 const FeatureTile: React.FC<FeatureTileProps> = ({ title, description, icon, onClick }) => {
@@ -18,7 +18,7 @@ const FeatureTile: React.FC<FeatureTileProps> = ({ title, description, icon, onC
       <h3 className="feature-tile-title">{title}</h3>
       <p className="feature-tile-description">{description}</p>
     </div>
-  );
-};
+  )
+}
 
-export default FeatureTile;
+export default FeatureTile

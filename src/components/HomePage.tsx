@@ -1,10 +1,10 @@
-"use client";
+"use client"
 
-import type React from "react";
-import PortalCard from "./PortalCard";
+import type React from "react"
+import PortalCard from "./PortalCard"
 
 interface HomePageProps {
-  onNavigate: (page: string) => void;
+  onNavigate: (page: string) => void
 }
 
 const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
@@ -36,7 +36,7 @@ const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <PortalCard title="Lab Reports" icon="science" onClick={() => onNavigate("lab-reports")} color="#607D8B" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default HomePage;
+export default HomePage

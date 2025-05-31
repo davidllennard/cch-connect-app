@@ -1,7 +1,7 @@
-"use client";
+"use client"
 
-import type React from "react";
-import { useState } from "react";
+import type React from "react"
+import { useState } from "react"
 
 const languages = [
   { code: "en", name: "English" },
@@ -19,16 +19,16 @@ const languages = [
   { code: "it", name: "Italiano (Italian)" },
   { code: "vi", name: "Tiếng Việt (Vietnamese)" },
   { code: "tr", name: "Türkçe (Turkish)" },
-];
+]
 
 const LanguageSelector: React.FC = () => {
-  const [currentLanguage, setCurrentLanguage] = useState(languages[0]);
-  const [isOpen, setIsOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState(languages[0])
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleLanguageChange = (language: (typeof languages)[0]) => {
-    setCurrentLanguage(language);
-    setIsOpen(false);
-  };
+    setCurrentLanguage(language)
+    setIsOpen(false)
+  }
 
   return (
     <div className="language-selector">
@@ -78,7 +78,7 @@ const LanguageSelector: React.FC = () => {
         </div>
       )}
     </div>
-  );
-};
+  )
+}
 
-export default LanguageSelector;
+export default LanguageSelector

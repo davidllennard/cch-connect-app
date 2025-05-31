@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type React from "react";
-import { useState } from "react";
-import BackButton from "../../components/BackButton";
-import type { PageType } from "../_app";
+import type React from "react"
+import { useState } from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
 
 interface ProfileProps {
-  navigateTo: (page: PageType) => void;
+  navigateTo: (page: PageType) => void
 }
 
 const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
@@ -33,10 +33,10 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
     canSing: "",
     specialTalent: "",
     otherHobby: "",
-  });
+  })
 
-  const [hobbies, setHobbies] = useState<string[]>([]);
-  const [cuisines, setCuisines] = useState<string[]>([]);
+  const [hobbies, setHobbies] = useState<string[]>([])
+  const [cuisines, setCuisines] = useState<string[]>([])
 
   // Sort hobby options alphabetically
   const hobbyOptions = [
@@ -60,7 +60,7 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
     "Woodworking",
     "Writing",
     "Yoga",
-  ];
+  ]
 
   const cuisineOptions = [
     "American",
@@ -83,7 +83,7 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
     "Thai",
     "Turkish",
     "Vietnamese",
-  ];
+  ]
 
   const artGenreOptions = [
     "Digital Art",
@@ -102,33 +102,33 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
     "Printmaking",
     "Mixed Media",
     "Other",
-  ];
+  ]
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
 
   const handleHobbyChange = (hobby: string) => {
     if (hobbies.includes(hobby)) {
-      setHobbies(hobbies.filter((h) => h !== hobby));
+      setHobbies(hobbies.filter((h) => h !== hobby))
     } else {
-      setHobbies([...hobbies, hobby]);
+      setHobbies([...hobbies, hobby])
     }
-  };
+  }
 
   const handleCuisineChange = (cuisine: string) => {
     if (cuisines.includes(cuisine)) {
-      setCuisines(cuisines.filter((c) => c !== cuisine));
+      setCuisines(cuisines.filter((c) => c !== cuisine))
     } else {
-      setCuisines([...cuisines, cuisine]);
+      setCuisines([...cuisines, cuisine])
     }
-  };
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    alert("Profile saved successfully!");
-  };
+    e.preventDefault()
+    alert("Profile saved successfully!")
+  }
 
   return (
     <div className="container page-container">
@@ -550,7 +550,7 @@ const Profile: React.FC<ProfileProps> = ({ navigateTo }) => {
         </div>
       </form>
     </div>
-  );
-};
+  )
+}
 
-export default Profile;
+export default Profile

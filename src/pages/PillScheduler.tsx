@@ -1,16 +1,17 @@
-"use client";
+"use client"
 
-import type React from "react";
-import { useState } from "react";
-import BackButton from "../../components/BackButton";
-import type { PageType } from "../_app";
+import type React from "react"
+import { useState } from "react"
+import BackButton from "../components/BackButton"
+import type { PageType } from "../App"
+import "../styles/PageTemplate.css"
 
 interface PillSchedulerProps {
-  navigateTo: (page: PageType) => void;
+  navigateTo: (page: PageType) => void
 }
 
 const PillScheduler: React.FC<PillSchedulerProps> = ({ navigateTo }) => {
-  const [showAddMedication, setShowAddMedication] = useState(false);
+  const [showAddMedication, setShowAddMedication] = useState(false)
 
   return (
     <div className="container page-container">
@@ -171,7 +172,7 @@ const PillScheduler: React.FC<PillSchedulerProps> = ({ navigateTo }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default PillScheduler;
+export default PillScheduler

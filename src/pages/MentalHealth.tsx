@@ -1,12 +1,12 @@
-"use client";
+"use client"
 
-import type React from "react";
-import BackButton from "../../components/BackButton";
-import PortalCard from "../../components/PortalCard";
-import type { PageType } from "../_app";
+import type React from "react"
+import BackButton from "../components/BackButton"
+import PortalCard from "../components/PortalCard"
+import type { PageType } from "../App"
 
 interface MentalHealthProps {
-  navigateTo: (page: PageType) => void;
+  navigateTo: (page: PageType) => void
 }
 
 const MentalHealth: React.FC<MentalHealthProps> = ({ navigateTo }) => {
@@ -192,7 +192,7 @@ const MentalHealth: React.FC<MentalHealthProps> = ({ navigateTo }) => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default MentalHealth;
+export default MentalHealth
