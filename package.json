@@ -70,7 +70,6 @@
     "tsx": "latest",
     "vaul": "^0.9.6",
     "vite": "latest",
-    "yaml": "latest",
     "zod": "^3.24.1"
   },
   "devDependencies": {
